@@ -1,11 +1,20 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import ErrorPage from './pages/ErrorPage';
+import HouseDetails from './pages/HouseDetails';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <p>Hello world</p>
+
+    <div>
+      <Routes>
+        <Route path="/" element= {<Home />} />
+        <Route path="*" element={<ErrorPage />} />
+       <Route path= "/houses/:houseId" element={<HouseDetails />} />
+        </Routes>
     </div>
   );
-}
+};
 
 export default App;
